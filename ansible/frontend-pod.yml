@@ -14,8 +14,10 @@ spec:
     metadata:
       labels:
         app: frontend
-  containers:
-    - name: whiskerwag-frontend
-      image: chinmaykulkarni19/whiskerwagg-frontend
-      ports:
-        - containerPort: 8000
+
+    spec:
+      containers:
+      - name: whiskerwag-frontend
+        image: chinmaykulkarni19/whiskerwagg-frontend
+        ports:
+          - containerPort: 8000

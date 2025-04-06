@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: backend
   namespace: default
-
 spec:
   replicas: 1
   selector:
@@ -14,8 +13,10 @@ spec:
     metadata:
       labels:
         app: backend
-  containers:
-    - name: whiskerwag-backend
-      image: chinmaykulkarni19/whiskerwagg-backend
-      ports:
-        - containerPort: 8000
+
+    spec:
+      containers:
+      - name: whiskerwag-backend
+        image: chinmaykulkarni19/whiskerwagg-backend
+        ports:
+          - containerPort: 8000
