@@ -7,7 +7,7 @@ spec:
     app: backend
 
   ports:
-    portocol: TCP
-    port: 8000
-    targetPort: 8000
+    - portocol: TCP
+      port: 8000
+      targetPort: 8000
   type: ClusterIP

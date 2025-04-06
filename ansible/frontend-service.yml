@@ -7,8 +7,8 @@ spec:
     app: frontend
 
   ports:
-    portocol: TCP
-    port: 80
-    targetPort: 5173
+    - portocol: TCP
+      port: 80
+      targetPort: 5173
   type: LoadBalancer
   
