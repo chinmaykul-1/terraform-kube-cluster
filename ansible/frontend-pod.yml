@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: whiskerwag-frontend
-        image: chinmaykulkarni19/whiskerwag-frontend1
+        image: chinmaykulkarni19/whiskerwag-frontend
         ports:
           - containerPort: 5173
