@@ -81,7 +81,8 @@ pipeline{
                 export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
                 export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
                 export AWS_DEFAULT_REGION=ap-south-1
-                 ansible-playbook deploy-app.yml -e kubeconfig=$KUBECONFIG
+                export KUBECONFIG = "/root/.jenkins/workspace/terraform-eks-cluster/kubeconfig"
+                 ansible-playbook deploy-app.yml
                 '''
                 }
                 
