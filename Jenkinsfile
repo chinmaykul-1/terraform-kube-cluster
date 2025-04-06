@@ -45,7 +45,7 @@ pipeline{
 ]){
                 sh '''
                 terraform init
-                terraform apply -target=aws_subnet.private_subnet_2 -target aws_subnet.private_subnet_1 -auto-approve
+                terraform apply -target=aws_subnet.private_subnet_2 -target aws_subnet.private_subnet_1 -target aws_route_table.private_rt -target aws_route_table_association.private_association_1 -target aws_route_table_association.private_association_2 -auto-approve
                 '''
             }
             }
