@@ -12,7 +12,7 @@ resource "aws_eks_fargate_profile" "whiskerwag_eks_fargate_profile" {
     fargate_profile_name = "whiskerwag_eks_fargate_profile"
     pod_execution_role_arn = aws_iam_role.fargate_pod_execution_role.arn
     cluster_name = aws_eks_cluster.whiskerwag_eks_cluster.name
-    subnet_ids = data.aws_subnets.default1.ids
+    subnet_ids = [aws_subnet.private_subnet_1,aws_subnet.private_subnet_2]
     selector {
       namespace = "default"
     }

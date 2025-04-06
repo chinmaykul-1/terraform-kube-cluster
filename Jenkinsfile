@@ -37,6 +37,19 @@ pipeline{
             }
             }
         }
+        stage("Deploy Infra - Create private subnets"){
+            steps{
+                withCredentials([
+    string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'AWS_ACCESS_KEY_ID'),
+    string(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'AWS_SECRET_ACCESS_KEY')
+]){
+                sh '''
+                terraform init
+                terraform apply -target=aws_subnet.private_subnet_2 -target aws_subnet.private_subnet_1 -auto-approve
+                '''
+            }
+            }
+        }
           stage("Deploy Infra -EKS- fargate profile"){
             steps{
                 withCredentials([
@@ -61,7 +74,7 @@ pipeline{
             steps{
                 dir('ansible'){
                 sh '''
-                 ansible-playbook deploy-pods.yml -e kubeconfig=$KUBECONFIG
+                 ansible-playbook deploy-app.yml -e kubeconfig=$KUBECONFIG
                 '''
                 }
             }
