@@ -1,0 +1,21 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: default
+
+spec:
+  replicas: 1
+  selector:
+    matchLables:
+      app: frontend
+
+  template:
+    metadata:
+      labels:
+        app: frontend
+  containers:
+    - name: whiskerwag-frontend
+      iamge: chinmaykulkarni19/whiskerwagg-frontend
+      ports:
+        - containerPort: 8000

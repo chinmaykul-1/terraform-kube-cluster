@@ -1,0 +1,21 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: default
+
+spec:
+  replicas: 1
+  selector:
+    matchLables:
+      app: backend
+
+  template:
+    metadata:
+      labels:
+        app: backend
+  containers:
+    - name: whiskerwag-backend
+      iamge: chinmaykulkarni19/whiskerwagg-backend
+      ports:
+        - containerPort: 8000
