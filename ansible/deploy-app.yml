@@ -4,7 +4,7 @@
   gather_facts: no
   connection: local
   vars:
-    kubeconfig_path: "{{ lookup('env', 'KUBECONFIG') }}"
+    kubeconfig_path: "/root/.jenkins/workspace/terraform-eks-cluster/kubeconfig"
   tasks:
     - name: Deploy backtend pod
       k8s:
