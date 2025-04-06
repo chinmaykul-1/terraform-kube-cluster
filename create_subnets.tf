@@ -5,6 +5,6 @@ resource "aws_subnet" "private_subnet_1" {
 }
 resource "aws_subnet" "private_subnet_2" {
     vpc_id = data.aws_vpc.default.id
-    cidr_block = "172.30.0.1/26"
+    cidr_block = "172.30.1.0/26"
     map_public_ip_on_launch = false
 }
