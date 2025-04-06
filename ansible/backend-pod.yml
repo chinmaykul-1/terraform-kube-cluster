@@ -16,6 +16,6 @@ spec:
         app: backend
   containers:
     - name: whiskerwag-backend
-      iamge: chinmaykulkarni19/whiskerwagg-backend
+      image: chinmaykulkarni19/whiskerwagg-backend
       ports:
         - containerPort: 8000

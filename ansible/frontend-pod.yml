@@ -16,6 +16,6 @@ spec:
         app: frontend
   containers:
     - name: whiskerwag-frontend
-      iamge: chinmaykulkarni19/whiskerwagg-frontend
+      image: chinmaykulkarni19/whiskerwagg-frontend
       ports:
         - containerPort: 8000
