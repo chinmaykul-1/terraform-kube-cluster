@@ -1,7 +1,7 @@
 pipeline{
-    agent{
+    
         agent "any"
-    }
+    
     environment{
         AWS_REGION = 'ap-south-1'
         CLUSTER_NAME = 'whiskerwag_eks_cluster'
