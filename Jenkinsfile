@@ -5,7 +5,7 @@ pipeline{
     environment{
         AWS_REGION = 'ap-south-1'
         CLUSTER_NAME = 'whiskerwag_eks_cluster'
-        KUBECONFIG = "${WORKSPACE}/kubeconfig"
+        KUBECONFIG = "/root/.jenkins/workspace/terraform-eks-cluster/kubeconfig"
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
