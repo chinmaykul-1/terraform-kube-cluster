@@ -30,7 +30,7 @@ resource "aws_iam_role" "fargate_pod_execution_role" {
         Action = "sts:AssumeRole"
         Effect = "Allow"
         Principal = {
-            Service = "eks-fargate_pods.amazonaws.com"
+            Service = "eks-fargate-pods.amazonaws.com"
         }
     }]
     })
