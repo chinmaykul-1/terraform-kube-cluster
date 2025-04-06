@@ -7,7 +7,7 @@
     kubeconfig_path: "/root/.jenkins/workspace/terraform-eks-cluster/kubeconfig"
   tasks:
     - name: Deploy backtend pod
-      shell: kubectl get pods --kubeconfig=$kubeconfig_path
+      shell: kubectl apply -f 'backend-pod.yml'
       register: status
 
     - debug: var=status
@@ -17,20 +17,20 @@
       #   definition: "{{ lookup('file', 'backend-pod.yml') }}"
 
     - name: Deploy backtend service
-      k8s:
-        kubeconfig: "{{ kubeconfig_path }}"
-        state: present
-        definition: "{{ lookup('file', 'backend-service.yml') }}"
+      shell: kubectl apply -f 'backend-service.yml'
+      register: status
+
+    - debug: var=status
 
     - name: Deploy frontend pod
-      k8s:
-        kubeconfig: "{{ kubeconfig_path }}"
-        state: present
-        definition: "{{ lookup('file', 'frontend-pod.yml') }}"
+      shell: kubectl apply -f 'frontend-pod.yml'
+      register: status
+
+    - debug: var=status
 
     - name: Deploy frontend service
-      k8s:
-        kubeconfig: "{{ kubeconfig_path }}"
-        state: present
-        definition: "{{ lookup('file', 'frontend-service.yml') }}"
+      shell: kubectl apply -f 'frontend-service.yml'
+      register: status
+
+    - debug: var=status
 
